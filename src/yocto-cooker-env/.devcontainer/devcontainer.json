@@ -1,18 +1,16 @@
 {
     "name": "Yocto|Cooker",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
     "features": {
         "ghcr.io/exactassembly/yocto-devcontainer-features/yocto-cooker" : {}
     },
     "containerEnv": {        
-        "COOKER_WORKSPACE_DIR" : "${containerWorkspaceFolder}"
+        "COOKER_WORKSPACE" : "/workspace",
+        "COOKER_DL_CACHE" : "/var/lib/dl-cache",
+        "COOKER_SSTATE_CACHE" : "/var/lib/dl-cache"
     },
-    "mounts": [
-        { "source": "yocto-cooker-sstate-cache", "target": "/var/lib/sstate-cache", "type": "volume" },
-        { "source": "yocto-cooker-dl-cache", "target": "/var/lib/dl-cache", "type": "volume" }
-    ],
+	"workspaceFolder": "/workspace",
     "customizations": {
         "vscode": {
             "extensions": [

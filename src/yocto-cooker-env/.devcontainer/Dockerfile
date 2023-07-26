@@ -1,4 +1,6 @@
-FROM mcr.microsoft.com/devcontainers/python:3-${templateOption:imageVariant}
+# [Choice] Debian OS version: bullseye, buster
+ARG VARIANT
+FROM mcr.microsoft.com/devcontainers/python:3-${VARIANT}
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         gawk \
