@@ -1,0 +1,22 @@
+{
+    "id": "yocto-cooker-env",
+    "version": "0.0.1",
+    "name": "Yocto|Cooker",
+    "description": "Container with orchestration to automate Yocto image generation",
+    "documentationURL": "https://github.com/exactassembly/yocto-devcontainer-templates/tree/main/src/yocto-cooker-env",
+    "licenseURL": "https://github.com/exactassembly/yocto-devcontainer-templates/blob/main/LICENSE",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Debian version (use bullseye on local arm64/Apple Silicon):",
+            "proposals": [
+                "bullseye",
+                "buster"
+            ],
+            "default": "bullseye"
+        }
+    },
+    "platforms": [
+        "Any"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Yocto|Cooker",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/exactassembly/yocto-devcontainer-features/yocto-cooker" : {}
+    },
+    "containerEnv": {        
+        "COOKER_WORKSPACE_DIR" : "${containerWorkspaceFolder}"
+    },
+    "mounts": [
+        { "source": "yocto-cooker-sstate-cache", "target": "/var/lib/sstate-cache", "type": "volume" },
+        { "source": "yocto-cooker-dl-cache", "target": "/var/lib/dl-cache", "type": "volume" }
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mads-hartmann.bash-ide-vscode",
+                "EditorConfig.EditorConfig",
+                "EugenWeins.bitbake"
+            ]
+        }
+    }
+}
